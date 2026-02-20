@@ -25,14 +25,14 @@
                 <p id="total-count">0</p>
                 <p> total</p>
             </div>
-            <!-- total card -->
+            <!-- Thriving card -->
             <div class="bg-green-600/30 py-5 px-5 rounded-2xl text-xl">
-                <p id="total-count">0</p>
+                <p id="thrivingCount">0</p>
                 <p> Thriving</p>
             </div>
-            <!-- total card -->
+            <!-- Struggling card -->
             <div class="bg-red-600/30 py-5 px-5 rounded-2xl text-xl">
-                <p id="total-count">0</p>
+                <p id="strugglingCount">0</p>
                 <p> Struggling</p>
             </div>
         </div>
@@ -46,43 +46,44 @@
         <!-- button section -->
         <section class="space-x-5">
 
-            <button onclick="toggling('all')" id="all" class="btn btn-neutral ">All</button>
-            <button onclick="toggling('thriving')" id="thriving" class="btn btn-soft">Thriving</button>
-            <button onclick="toggling('struggling')" id="struggling" class="btn btn-soft">Struggling</button>
+            <button onclick="toggling('all-filter-btn')" id="all-filter-btn" class="btn btn-neutral ">All</button>
+            <button onclick="toggling('thriving-filter-btn')" id="thriving-filter-btn" class="btn btn-soft">Thriving</button>
+            <button onclick="toggling('struggling-filter-btn')" id="struggling-filter-btn" class="btn btn-soft">Struggling</button>
 
         </section>
 
-        <!-- thriving container -->
-        <section class="thriving-card-container space-y-5">
 
-        </section>
 
-        <!-- struggling container -->
+        <!-- filtered card -->
         <section class="struggling-card-container space-y-5">
 
         </section>
 
         <!-- cards section -->
-        <section class="all-container space-y-5">
+        <section  id="allCards" class="space-y-5">
 
-            <!-- card -->
+
+
+            <!-- card 1-->
             <div id="card" class=" flex justify-between py-10 px-5 border-2 shadow-md">
 
 
                 <!-- left -->
                 <div class="left space-y-4 ">
-                    <h1 class="plant-name text-lg font-semibold">Plant Name 1</h1>
-                    <p class=" font-light ">Latin Name</p>
+                    <div>
+                        <h1 class="plantName text-lg font-semibold">Plant Name 1</h1>
+                        <p class="latinName font-light ">Latin Name</p>
+                    </div>
 
 
                     <div class="flex gap-3 ">
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
+                        <p class="light text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
+                        <p class="water text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
                     </div>
 
-                    <p id="status" class="border rounded-md p-1">No Applicable</p>
+                    <p class="Status border rounded-md p-1">No Applicable</p>
 
-                    <p>New leaf unfurling by the east window</p>
+                    <p class="notes">New leaf unfurling by the east window</p>
 
                     <div class=" space-x-5">
                         <button id="thriving-btn" class="btn btn-outline btn-success">Thriving</button>
@@ -92,30 +93,31 @@
 
 
                 <!-- right -->
-                <div class="">
-                    <button class="btn btn-outline btn-error ">Delete</button>
+                <div>
+                    <button class="btn-delete btn btn-outline btn-error ">Delete</button>
                 </div>
             </div>
 
-
-            <!-- card -->
+            <!-- card 2-->
             <div id="card" class=" flex justify-between py-10 px-5 border-2 shadow-md">
 
 
                 <!-- left -->
                 <div class="left space-y-4 ">
-                    <h1 class="plant-name text-lg font-semibold">Plant Name 2</h1>
-                    <p class=" font-light ">Latin Name</p>
+                    <div>
+                        <h1 class="plantName text-lg font-semibold">Plant Name 2</h1>
+                        <p class="latinName font-light ">Latin Name</p>
+                    </div>
 
 
                     <div class="flex gap-3 ">
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
+                        <p class="light text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
+                        <p class="water text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
                     </div>
 
-                    <p id="status" class="border rounded-md p-1">No Applicable</p>
+                    <p class="Status border rounded-md p-1">No Applicable</p>
 
-                    <p>New leaf unfurling by the east window</p>
+                    <p class="notes">New leaf unfurling by the east window</p>
 
                     <div class=" space-x-5">
                         <button id="thriving-btn" class="btn btn-outline btn-success">Thriving</button>
@@ -125,30 +127,31 @@
 
 
                 <!-- right -->
-                <div class="">
-                    <button class="btn btn-outline btn-error ">Delete</button>
+                <div>
+                    <button class="btn-delete btn btn-outline btn-error ">Delete</button>
                 </div>
             </div>
 
-
-            <!-- card -->
+            <!-- card 3-->
             <div id="card" class=" flex justify-between py-10 px-5 border-2 shadow-md">
 
 
                 <!-- left -->
                 <div class="left space-y-4 ">
-                    <h1 class="plant-name text-lg font-semibold">Plant Name 3</h1>
-                    <p class=" font-light ">Latin Name</p>
+                    <div>
+                        <h1 class="plantName text-lg font-semibold">Plant Name 3</h1>
+                        <p class="latinName font-light ">Latin Name</p>
+                    </div>
 
 
                     <div class="flex gap-3 ">
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
+                        <p class="light text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
+                        <p class="water text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
                     </div>
 
-                    <p id="status" class="border rounded-md p-1">No Applicable</p>
+                    <p class="Status border rounded-md p-1">No Applicable</p>
 
-                    <p>New leaf unfurling by the east window</p>
+                    <p class="notes">New leaf unfurling by the east window</p>
 
                     <div class=" space-x-5">
                         <button id="thriving-btn" class="btn btn-outline btn-success">Thriving</button>
@@ -158,29 +161,31 @@
 
 
                 <!-- right -->
-                <div class="">
-                    <button class="btn btn-outline btn-error ">Delete</button>
+                <div>
+                    <button class="btn-delete btn btn-outline btn-error ">Delete</button>
                 </div>
             </div>
 
-            <!-- card -->
+            <!-- card 4-->
             <div id="card" class=" flex justify-between py-10 px-5 border-2 shadow-md">
 
 
                 <!-- left -->
                 <div class="left space-y-4 ">
-                    <h1 class="plant-name text-lg font-semibold">Plant Name 4</h1>
-                    <p class=" font-light ">Latin Name</p>
+                    <div>
+                        <h1 class="plantName text-lg font-semibold">Plant Name 4</h1>
+                        <p class="latinName font-light ">Latin Name</p>
+                    </div>
 
 
                     <div class="flex gap-3 ">
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
-                        <p class="text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
+                        <p class="light text-gray-700 bg-gray-300 p-1 rounded-md">Bright Indicate</p>
+                        <p class="water text-gray-700 bg-gray-300 p-1 rounded-md"> Weekly</p>
                     </div>
 
-                    <p id="status" class="border rounded-md p-1">No Applicable</p>
+                    <p class="Status border rounded-md p-1">No Applicable</p>
 
-                    <p>New leaf unfurling by the east window</p>
+                    <p class="notes">New leaf unfurling by the east window</p>
 
                     <div class=" space-x-5">
                         <button id="thriving-btn" class="btn btn-outline btn-success">Thriving</button>
@@ -190,10 +195,13 @@
 
 
                 <!-- right -->
-                <div class="">
-                    <button class="btn btn-outline btn-error ">Delete</button>
+                <div>
+                    <button class="btn-delete btn btn-outline btn-error ">Delete</button>
                 </div>
             </div>
+
+
+            
 
         </section>
 
