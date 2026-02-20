@@ -1,11 +1,11 @@
 let thrivingList = [];
 let strugglingList = [];
-
+let currentStatus = 'all'
 
 // counting 
 const total = document.getElementById('total-count');
 const thrivingCount = document.getElementById('thrivingCount');
-const strugglingCount = document.getElementById('thrivingCount');
+const strugglingCount = document.getElementById('strugglingCount');
 
 
 // toggle buttons
@@ -43,10 +43,15 @@ function toggling(id) {
     thrivingFilterBtn.classList.remove('btn-neutral');
     strugglingFilterBtn.classList.remove('btn-neutral');
 
+
+
+
+    
     // if selected change the btn to black 
     const selected = document.getElementById(id);
     selected.classList.remove('btn-soft');
     selected.classList.add('btn-neutral');
+    currentStatus = id;
 
 
     if (id == 'thriving-filter-btn') {
@@ -54,7 +59,7 @@ function toggling(id) {
         filterSection.classList.remove('hidden');
         renderThriving();
 
-    }else if (id == 'all-filter-btn') {
+    } else if (id == 'all-filter-btn') {
         allCardSection.classList.remove('hidden');
         filterSection.classList.add('hidden');
 
@@ -95,7 +100,7 @@ mainContainer.addEventListener('click', function (event) {
             latinName,
             light,
             water,
-            status : 'Thrive',
+            status: 'Thrive',
             notes
 
         }
@@ -107,8 +112,13 @@ mainContainer.addEventListener('click', function (event) {
             thrivingList.push(cardInfo);
         }
 
-        renderThriving();
-        
+        strugglingList = strugglingList.filter(item => item.plantName != cardInfo.plantName);
+        if (currentStatus == 'struggling-filter-btn') {
+
+            renderStruggling();
+        }
+        calculateTotalCount()
+
 
 
     } else if (event.target.classList.contains('struggling-btn')) {
@@ -133,7 +143,7 @@ mainContainer.addEventListener('click', function (event) {
             latinName,
             light,
             water,
-            status,
+            status: 'struggle', 
             notes
 
         }
@@ -145,10 +155,14 @@ mainContainer.addEventListener('click', function (event) {
             strugglingList.push(cardInfo);
         }
 
-        renderStruggling();
-        
+        thrivingList = thrivingList.filter(item => item.plantName != cardInfo.plantName);
+        if (currentStatus == 'thriving-filter-btn') {
 
-        
+            renderThriving();
+        }
+        calculateTotalCount()
+
+
     }
 
 })
